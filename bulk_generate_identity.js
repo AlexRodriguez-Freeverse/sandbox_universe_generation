@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 
 /*
-Generates a brand new identity and encrypts it with a randomly generated password.
-Use at your own risk. The generated privKey will be output in console.
+Generates a series of brand new identity and encrypts it with a randomly generated password.
+It flushes everything on a CSV file. Use at your own risk. The generated information is very sensitive.
 */
 
 const { appendFileSync, existsSync } = require('fs');
@@ -31,6 +31,7 @@ class UniverseOwner {
         this.publicKey = identity.publicKeyFromPrivateKey(newId.privateKey);
     }
 
+    // Writes the object in a CSV file. It is appended to the existing file
     saveAsCSV() {
       try {
         // Write the headers if the file does not exist
@@ -51,11 +52,10 @@ class UniverseOwner {
 
 // It creates 100 universe owners
 const startApp = () => {
-
     for (var i=0; i<NUM_ROWS; i++)
     {
-        const universeOwner1 = new UniverseOwner();
-        universeOwner1.saveAsCSV();
+        const universeOwner = new UniverseOwner();
+        universeOwner.saveAsCSV();
     }
 }
 startApp();
