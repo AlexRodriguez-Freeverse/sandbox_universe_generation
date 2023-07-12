@@ -1,3 +1,4 @@
-universe_owners.csv
+*.csv
 node_modules
 package-lock.json
+.env
