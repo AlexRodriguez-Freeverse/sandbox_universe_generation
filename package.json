@@ -12,6 +12,7 @@
     "alchemy-sdk": "^2.9.2",
     "dotenv": "^16.3.1",
     "ethers": "^6.6.3",
+    "fast-csv": "^4.3.6",
     "freeverse-crypto-js": "1.0.7",
     "fs": "^0.0.1-security",
     "generate-password": "^1.7.0"
