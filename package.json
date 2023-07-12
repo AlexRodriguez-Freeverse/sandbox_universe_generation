@@ -1,0 +1,16 @@
+{
+  "name": "sandbox_generation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "freeverse-crypto-js": "1.0.7",
+    "generate-password": "^1.7.0",
+    "fs": "^0.0.1-security"
+  }
+}
