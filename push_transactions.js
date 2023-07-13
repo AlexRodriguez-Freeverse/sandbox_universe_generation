@@ -58,7 +58,6 @@ async function generateEncodedABI(row) {
 }
 
 async function main() {
-
     // Process the whole CSV file
     var rows = await readCSV(CSV_PATH);
     for (var i=0; i<rows.length; i++)
