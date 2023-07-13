@@ -3,16 +3,15 @@ const fs = require('fs');
 const csv = require('fast-csv');
 const { ethers } = require('ethers');
 
-const API_KEY = process.env.API_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const STORAGE_ADDRESS = process.env.STORAGE_ADDRESS;
 const CSV_PATH = process.env.CSV_PATH;
 
 const storage = require("./contracts/Storage.json");
 
-// Connect to the L2 through Alchemy with the provided user
-const alchemyProvider = new ethers.AlchemyProvider(network="maticMumbai", API_KEY);
-const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
+// Connect to the L2
+const provider = new ethers.JsonRpcProvider(process.env.PROVIDER_URL);
+const signer = new ethers.Wallet(PRIVATE_KEY, provider);
 
 // Contract instances
 const StorageContract = new ethers.Contract(STORAGE_ADDRESS, storage.abi, signer);

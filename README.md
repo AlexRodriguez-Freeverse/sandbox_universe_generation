@@ -28,7 +28,7 @@ It will process all the universe creation requests in the file.
 
 The `.env` file has this structure:
 ```
-API_KEY = "<YOUR_ALCHEMY_API_KEY>"
+PROVIDER_URL = "https://rpc-mumbai.maticvigil.com/"
 PRIVATE_KEY = "<THE_PK_THAT_WILL_MAKE_THE_INTERACTION_WITH_THE_BLOCKCHAIN>"
 STORAGE_ADDRESS = "<STORAGE_ADDRESS_[DEV|STAGING]>"
 CSV_PATH = "./FILENAME_OF_THE_CSV.csv"
