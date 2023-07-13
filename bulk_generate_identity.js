@@ -25,12 +25,6 @@ class UniverseOwner {
             numbers: true
         });
 
-        // Generate a short universe name
-        const universe_name = generator.generate({
-            length: 5,
-            numbers: true
-        });
-        
         // Populate the fields with the information of the newly created account
         const newId = identity.createNewAccount();
         const encrypted = identity.encryptIdentity(newId.privateKey, password);
@@ -40,7 +34,8 @@ class UniverseOwner {
         this.userPassword = password;
         this.privateKey = newId.privateKey;
         this.publicKey = identity.publicKeyFromPrivateKey(newId.privateKey);
-        this.universeName = "sandbox-" + universe_name;
+        // Generate a short universe name. Last 4 chars of the owner
+        this.universeName = "sandbox-" + newId.address.slice(-4);
     }
 
     // Writes the object in a CSV file. It is appended to the existing file
