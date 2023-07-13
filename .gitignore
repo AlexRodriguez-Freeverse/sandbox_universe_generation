@@ -1,6 +1,5 @@
 *.csv
 node_modules
-package-lock.json
 .env
 .env_dev
 .env_staging
